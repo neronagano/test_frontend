@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Лабораторная 0 Hello World</title>
+  <style>body{font:20px/1.5 Arial,sans-serif;margin:32px}button{font:inherit;padding:6px 12px}</style>
+</head>
+<body>
+  <!-- Гуломов -->
+  <h1>Hello, World</h1>
+  <p>Лабораторная работа 0. Подготовка среды</p>
+  <button type="button" onclick="readNumber()">Ввести число</button>
+  <p id="result">Число ещё не введено.</p>
+  <script>
+    alert("Hello, World");
+    let a;
+    function readNumber() {
+      const answer = prompt("Введите число", "10");
+      if (answer === null) return;
+      const input = answer.trim().replace(",", ".");
+      if (!input || !Number.isFinite(Number(input))) {
+        document.getElementById("result").textContent = "Введите конечное число.";
+        return;
+      }
+      a = Number(input);
+      document.getElementById("result").textContent = `a = ${a}; typeof a = ${typeof a}`;
+    }
+  </script>
+</body>
+</html>
